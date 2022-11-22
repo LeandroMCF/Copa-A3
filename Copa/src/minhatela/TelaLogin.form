@@ -68,6 +68,9 @@
           </Border>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="loginJTextFieldActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JPasswordField" name="senhaJPasswordField">
       <Properties>
@@ -81,7 +84,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="entrarJButton">
       <Properties>
-        <Property name="label" type="java.lang.String" value="entrar"/>
+        <Property name="text" type="java.lang.String" value="Entrar"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="entrarJButtonActionPerformed"/>
@@ -89,7 +92,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="sairJButton">
       <Properties>
-        <Property name="text" type="java.lang.String" value="sair"/>
+        <Property name="text" type="java.lang.String" value="Sair"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="sairJButtonActionPerformed"/>

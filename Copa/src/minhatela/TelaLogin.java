@@ -10,12 +10,12 @@ import javax.swing.JOptionPane;
  *
  * @author Trabalho
  */
-public class MinhaTela extends javax.swing.JFrame {
+public class TelaLogin extends javax.swing.JFrame {
 
     /**
      * Creates new form MinhaTela
      */
-    public MinhaTela() {
+    public TelaLogin() {
         initComponents();
     }
 
@@ -37,18 +37,23 @@ public class MinhaTela extends javax.swing.JFrame {
 
         loginJTextField.setToolTipText("");
         loginJTextField.setBorder(javax.swing.BorderFactory.createTitledBorder("login"));
+        loginJTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                loginJTextFieldActionPerformed(evt);
+            }
+        });
 
         senhaJPasswordField.setToolTipText("");
         senhaJPasswordField.setBorder(javax.swing.BorderFactory.createTitledBorder("senha"));
 
-        entrarJButton.setLabel("entrar");
+        entrarJButton.setText("Entrar");
         entrarJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 entrarJButtonActionPerformed(evt);
             }
         });
 
-        sairJButton.setText("sair");
+        sairJButton.setText("Sair");
         sairJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 sairJButtonActionPerformed(evt);
@@ -104,6 +109,10 @@ public class MinhaTela extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_sairJButtonActionPerformed
 
+    private void loginJTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginJTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_loginJTextFieldActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -121,20 +130,21 @@ public class MinhaTela extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MinhaTela.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MinhaTela.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MinhaTela.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MinhaTela.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new MinhaTela().setVisible(true);
+                new TelaLogin().setVisible(true);
             }
         });
     }
