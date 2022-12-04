@@ -97,11 +97,24 @@ public class TelaLogin extends javax.swing.JFrame {
     private void entrarJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entrarJButtonActionPerformed
         String login = loginJTextField.getText();
         String senha = new String(senhaJPasswordField.getPassword());
-        if(login.equals("admin") && senha.equals("senha")){
-            JOptionPane.showMessageDialog(null,"Login efetuado!");            
+        try{
+            UsersDomain user = new UsersDomain(login, senha);
+            DAO dao = new DAO();
+            
+            if(dao.exists(user)){
+                JOptionPane.showMessageDialog(null, "Bem vindo, " +
+                    user.getNome() + " !");
+                //DashboardTela dt = new DashboardTela();
+                //dt.setVisible(true);
+                //this.dispose();                
+            }
+            else{
+                JOptionPane.showMessageDialog(null, "Usuário invalido");
+            }
+        
         }
-        else{
-            JOptionPane.showMessageDialog(null, "Login inexiste ou senha não confere");
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null, "problemas técnicos. Tente mais tarde");
         }
     }//GEN-LAST:event_entrarJButtonActionPerformed
 
