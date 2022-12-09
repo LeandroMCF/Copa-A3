@@ -4,6 +4,8 @@
  */
 package View;
 
+import Domain.Usuario;
+import Class.DAO;
 import javax.swing.JOptionPane;
 
 /**
@@ -66,7 +68,10 @@ public class CadastroUser extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(122, 122, 122)
+                        .addContainerGap()
+                        .addComponent(jToggleButton1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(54, 54, 54)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel3)
                             .addComponent(jLabel2)
@@ -75,11 +80,8 @@ public class CadastroUser extends javax.swing.JFrame {
                                 .addComponent(SenhaInput)
                                 .addComponent(EmailInput)
                                 .addComponent(NomeINput)
-                                .addComponent(CadastrarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jToggleButton1)))
-                .addContainerGap(126, Short.MAX_VALUE))
+                                .addComponent(CadastrarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(55, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -118,14 +120,12 @@ public class CadastroUser extends javax.swing.JFrame {
         } 
         else{ 
             try{ 
-                int escolha = JOptionPane.showConfirmDialog(null, "Confirmar cadastro" 
-                + " de novo usuário?"); 
+                int escolha = JOptionPane.showConfirmDialog(null, "Confirmar cadastro de novo usuário?"); 
                 if (escolha == JOptionPane.YES_OPTION){ 
                     Usuario usuario = new Usuario (nome, email, senha); 
                     DAO dao = new DAO(); 
                     dao.inserirUsuario(usuario); 
-                    JOptionPane.showMessageDialog(null, "Usuario cadastrado com" + 
-                        "sucesso"); 
+                    JOptionPane.showMessageDialog(null, "Usuario cadastrado com sucesso"); 
                     EmailInput.setText(""); 
                     SenhaInput.setText(""); 
                     NomeINput.setText("");

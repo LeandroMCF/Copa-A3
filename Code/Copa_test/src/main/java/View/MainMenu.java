@@ -27,7 +27,9 @@ public class MainMenu extends javax.swing.JFrame {
     private void initComponents() {
 
         jButton1 = new javax.swing.JButton();
-        jToggleButton1 = new javax.swing.JToggleButton();
+        Times = new javax.swing.JToggleButton();
+        Chaves = new javax.swing.JToggleButton();
+        Jogadores = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -38,10 +40,24 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
 
-        jToggleButton1.setText("Listar Usuario");
-        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+        Times.setText("Times");
+        Times.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton1ActionPerformed(evt);
+                TimesActionPerformed(evt);
+            }
+        });
+
+        Chaves.setText("Chaves");
+        Chaves.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ChavesActionPerformed(evt);
+            }
+        });
+
+        Jogadores.setText("Jogadores");
+        Jogadores.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JogadoresActionPerformed(evt);
             }
         });
 
@@ -53,17 +69,25 @@ public class MainMenu extends javax.swing.JFrame {
                 .addGap(16, 16, 16)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jToggleButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(261, Short.MAX_VALUE))
+                    .addComponent(Jogadores, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Times, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Chaves, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(15, 15, 15)
-                .addComponent(jButton1)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1)
+                    .addComponent(Times))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jToggleButton1)
-                .addContainerGap(227, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Chaves)
+                    .addComponent(Jogadores))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
 
         pack();
@@ -76,12 +100,26 @@ public class MainMenu extends javax.swing.JFrame {
         this.dispose(); 
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
+    private void ChavesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChavesActionPerformed
         // TODO add your handling code here:
-        ListUsers dt = new ListUsers();
+        ListChaves dt = new ListChaves();
         dt.setVisible(true);
-        this.dispose();         
-    }//GEN-LAST:event_jToggleButton1ActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_ChavesActionPerformed
+
+    private void JogadoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JogadoresActionPerformed
+        // TODO add your handling code here:
+        ListPlayers dt = new ListPlayers();
+        dt.setVisible(true);
+        this.dispose();  
+    }//GEN-LAST:event_JogadoresActionPerformed
+
+    private void TimesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TimesActionPerformed
+        // TODO add your handling code here:
+        ListTimes dt = new ListTimes();
+        dt.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_TimesActionPerformed
 
     /**
      * @param args the command line arguments
@@ -119,7 +157,9 @@ public class MainMenu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JToggleButton Chaves;
+    private javax.swing.JToggleButton Jogadores;
+    private javax.swing.JToggleButton Times;
     private javax.swing.JButton jButton1;
-    private javax.swing.JToggleButton jToggleButton1;
     // End of variables declaration//GEN-END:variables
 }
